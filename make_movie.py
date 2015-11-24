@@ -48,8 +48,8 @@ def main():
     number_of_times = vorticity.shape[0]
     # for t in range(0, len(f.variables['Time']))
     
-    #fig = plt.figure()
-    #images = []
+    fig = plt.figure()
+    images = []
     
     for t in range(0,number_of_times):
         img = plt.imshow(vorticity[t,0,:,:])
@@ -58,12 +58,12 @@ def main():
         output_file_name = 'vorticity_%03d.png' % t
         # output_file_name = 'vorticity_' + str(t).zfill(3) + '.png'
         # output_file_name = 'vorticity_{}'.format(t,'03') + '.png'
-        plt.savefig(output_file_name)
-        plt.close()
+        #plt.savefig(output_file_name)
+        #plt.close()
         #print t
 
-    #ani = animation.ArtistAnimation(fig, images, interval = 20)
-    #plt.show()
+    ani = animation.ArtistAnimation(fig, images, interval = 20)
+    plt.show()
     # Extra:
     # Want the vorticity to have format vorticity_<t>.png
     # Ideally this would be padded with 0's. For example,
